@@ -1,0 +1,1 @@
+0 3 * * * /bin/bash /path/to/fetch.sh
