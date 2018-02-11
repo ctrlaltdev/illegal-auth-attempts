@@ -3,6 +3,9 @@ pids
 *.pid
 *.seed
 
+.pytest*
+__pycache__
+
 # =========================
 # Operating System Files
 # =========================
