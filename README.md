@@ -4,7 +4,7 @@ This set of scripts aims to extract from auth attempts or device scanning IPs an
 
 ## IPS
 
-The top IPs are:
+The top 10 IPs are:
 
 | IP              | Count |
 | --------------- | -----:|
@@ -17,7 +17,7 @@ The top IPs are:
 | 59.63.166.105   | 4027  |
 | 123.183.209.140 | 3964  |
 | 42.7.26.49      | 3649  |
-| 103.99.0.188    | 3180  |
+| 103.99.0.188    | 3240  |
 
 ## Users
 
@@ -25,16 +25,20 @@ The top 10 users are:
 
 | User    | Count |
 | ------- | -----:|
-| admin   | 2024  |
-| user    | 1322  |
-| test    | 1270  |
-| guest   | 1189  |
-| pi      | 278   |
-| ftpuser | 199   |
-| support | 180   |
-| ubnt    | 146   |
-| ftp     | 126   |
-| 1234    | 76    |
+| admin   | 2052  |
+| user    | 1331  |
+| test    | 1274  |
+| guest   | 1192  |
+| pi      | 288   |
+| ftpuser | 203   |
+| support | 184   |
+| ubnt    | 149   |
+| ftp     | 128   |
+| 1234    | 77    |
+
+## Files
+
+The uncompressed files are available in src/ and the .tar.gz are in archives/
 
 ## How and what
 
