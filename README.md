@@ -48,6 +48,12 @@ The `fetch.sh` script get from /var/log/auth.log the IPs and users of the previo
 
 Moreover, for it to work, the cron has to be able to read /var/log/auth.log and write in /var/log/
 
+### Importing
+
+If you're fetching IPs and Users on several devices and want to centralize everything on one, you can put your auth.log or secure files in import/sources.
+Then `cp import/sources/filetoimport import/import` then `cd import && ./import.sh`
+This will append the IPs and Users to src/IPs.log and src/users.log
+
 ### Counting and sorting
 
 Once enough data gathered, and the IPs.log and users.log moved or copied to src/, the `order.sh` will create unique IPs and users lists, as well as lists with count of their occurences in the original logs, sorted descendingly.
@@ -59,6 +65,7 @@ Once enough data gathered, and the IPs.log and users.log moved or copied to src/
 
 ### Contributing
 
-You can run this script on your public facing devices to collect the IPs and users too, and if you want you can append your IPs log to src/IPs.log and your users.log to src/users.log, run `./order.sh` and `./archive.sh` and create a pull request.
+You can run this script on your public facing devices to collect the IPs and users too, and if you want to contribute, please refer to Import section.
+Once you're done, run `./order.sh` and `./archive.sh` and create a pull request.
 
 Not that you will need git lfs for src/ and archives/
