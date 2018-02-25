@@ -1,9 +1,20 @@
 #!/bin/bash
 
-python3 ./dedupe.py
+rm src/*.log
 
-rm src/unique.IPs.count.log
-rm src/unique.users.count.log
+usersfiles=$(find import/ | grep -P "users.log");
+for file in $usersfiles
+do
+  cat $file >> src/users.log
+done
+
+IPsfiles=$(find import/ | grep -P "IPs.log");
+for file in $IPsfiles
+do
+  cat $file >> src/IPs.log
+done
+
+python3 ./dedupe.py
 
 while IFS= read -r line; do count=$(grep -c "$line" src/IPs.log); echo $line:$count >> src/unique.IPs.count.log; done < src/unique.IPs.log
 

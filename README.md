@@ -38,25 +38,27 @@ The top 10 users are:
 
 ## Files
 
-The uncompressed files are available in src/ and the .tar.gz are in archives/
+If you didn't use the fetch script to get you IPs.log and users.log, you can put your auth.log or secure files in import/sources/ (those files are ignored by git, so it won't be uploaded) - then you have to import them - refer to importing section
+
+If you used the fetch script, put your IPs.log and users.log files in import/ and prefix them to distinguish them from other users' files and devices (please only use letters, numbers, dash and underscore in the prefix - I use a githubusername_devicename pattern)
 
 ## How and what
 
 ### Fetching
 
-The `fetch.sh` script get from /var/log/auth.log the IPs and users of the previous day lines of the log. Hence it has to be run only once a day to get everything and to not duplicate data.
+The `fetch/fetch.sh` script get from /var/log/auth.log the IPs and users of the previous day lines of the log. Hence it has to be run only once a day to get everything and to not duplicate data.
 
 Moreover, for it to work, the cron has to be able to read /var/log/auth.log and write in /var/log/
 
 ### Importing
 
-If you're fetching IPs and Users on several devices and want to centralize everything on one, you can put your auth.log or secure files in import/sources.
-Then `cp import/sources/filetoimport import/import` then `cd import && ./import.sh`
-This will append the IPs and Users to src/IPs.log and src/users.log
+If you're fetching IPs and Users on several devices and want to centralize everything on one, you can put your auth.log or secure files in import/sources/.
+
+Please prefix your auth.log or secure files per device in order to distinguish them, I use a githubusername_devicename pattern (only use letters, numbers, dash and underscore in the prefix, or it won't work).
 
 ### Counting and sorting
 
-Once enough data gathered, and the IPs.log and users.log moved or copied to src/, the `order.sh` will create unique IPs and users lists, as well as lists with count of their occurences in the original logs, sorted descendingly.
+Once enough data gathered, and the IPs.log and users.log are created in import/, the `IAA.sh` will create unique IPs and users lists, as well as lists with count of their occurences in the original logs, sorted descendingly.
 
 ### Prerequisites
 
@@ -66,6 +68,6 @@ Once enough data gathered, and the IPs.log and users.log moved or copied to src/
 ### Contributing
 
 You can run this script on your public facing devices to collect the IPs and users too, and if you want to contribute, please refer to Import section.
-Once you're done, run `./order.sh` and `./archive.sh` and create a pull request.
+Once you're done, run `,/import.sh` if needed, and `./IAA.sh` - commit and then create a pull request.
 
-Not that you will need git lfs for src/ and archives/
+Note that you will need git lfs for src/ and import/.

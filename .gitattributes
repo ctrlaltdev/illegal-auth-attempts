@@ -1,2 +1,10 @@
-src/ filter=lfs diff=lfs merge=lfs -text
-archives/ filter=lfs diff=lfs merge=lfs -text
+src/unique.users.log filter=lfs diff=lfs merge=lfs -text
+src/users.log filter=lfs diff=lfs merge=lfs -text
+src/IPs.log filter=lfs diff=lfs merge=lfs -text
+src/unique.IPs.count.log filter=lfs diff=lfs merge=lfs -text
+src/unique.IPs.log filter=lfs diff=lfs merge=lfs -text
+src/unique.users.count.log filter=lfs diff=lfs merge=lfs -text
+import/ctrlaltdev_AWS.IPs.log filter=lfs diff=lfs merge=lfs -text
+import/ctrlaltdev_AWS.users.log filter=lfs diff=lfs merge=lfs -text
+import/ctrlaltdev_shardsrv.IPs.log filter=lfs diff=lfs merge=lfs -text
+import/ctrlaltdev_shardsrv.users.log filter=lfs diff=lfs merge=lfs -text
