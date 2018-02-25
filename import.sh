@@ -12,3 +12,5 @@ do
   rm import/${prefix}.IPs.log;
   while IFS= read -r line; do grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=.*preauth)' <<< "$line" >> import/${prefix}.IPs.log; done < $source
 done
+
+echo DONE
