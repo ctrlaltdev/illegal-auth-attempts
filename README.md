@@ -68,6 +68,6 @@ Once enough data gathered, and the IPs.log and users.log are created in import/,
 ### Contributing
 
 You can run this script on your public facing devices to collect the IPs and users too, and if you want to contribute, please refer to Import section.
-Once you're done, run `,/import.sh` if needed, and `./IAA.sh` - commit and then create a pull request.
+Once you're done, run `./import.sh` if needed, and `./IAA.sh` - commit and then create a pull request.
 
 Note that you will need git lfs for src/ and import/.
