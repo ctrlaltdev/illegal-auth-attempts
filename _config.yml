@@ -1,1 +1,8 @@
-theme: jekyll-theme-minimal
+remote_theme: ctrlaltdev/ctrlaltdev-theme
+theme_settings:
+  title: "Illegal Auth Attempts"
+  description: "Lists of IPs making illegal auth attempts and users used doing so"
+  
+sass:
+  sass_dir: _sass
+  style: :compressed
