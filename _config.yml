@@ -2,7 +2,7 @@ remote_theme: ctrlaltdev/ctrlaltdev-theme
 theme_settings:
   title: "Illegal Auth Attempts"
   description: "Lists of IPs making illegal auth attempts and users used doing so"
-  
+github: "ctrlaltdev/illegal-auth-attempts"
 sass:
   sass_dir: _sass
   style: :compressed
