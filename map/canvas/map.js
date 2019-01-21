@@ -32,10 +32,12 @@
 	}
 
 	function place (ips) {
+		const maxCount = parseInt(ips[0].count)
 		ips.map(ip => {
 			ctx.beginPath()
 
-			ctx.arc(getLon(ip.loc.split(',')[1]), getLat(ip.loc.split(',')[0]), 2, 0, 2 * Math.PI)
+			const radius = parseInt(ip.count) * 100 / maxCount
+			ctx.arc(getLon(ip.loc.split(',')[1]), getLat(ip.loc.split(',')[0]), radius, 0, 2 * Math.PI)
 
 			ctx.strokeStyle = `rgba(255,0,0)`
 			ctx.lineWidth = 1
