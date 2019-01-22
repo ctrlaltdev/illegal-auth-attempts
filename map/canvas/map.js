@@ -10,7 +10,7 @@
 	const height = canvas.height
 	const width = canvas.width
 
-	ctx.fillStyle = "rgb(0,0,0)"
+	ctx.fillStyle = "rgb(255,255,255)"
 	ctx.fillRect(0, 0, width, height)
 
 	function draw (shapes) {
@@ -21,7 +21,7 @@
 				ctx.lineTo(getLon(p.lon), getLat(p.lat))
 			})
 
-			ctx.strokeStyle = `rgba(0,255,255)`
+			ctx.strokeStyle = `rgba(30,30,30)`
 			ctx.lineWidth = 1
 			ctx.stroke()
 		})
@@ -39,7 +39,7 @@
 			const radius = parseInt(ip.count) * 100 / maxCount
 			ctx.arc(getLon(ip.loc.split(',')[1]), getLat(ip.loc.split(',')[0]), radius, 0, 2 * Math.PI)
 
-			ctx.strokeStyle = `rgba(255,0,0)`
+			ctx.strokeStyle = `rgba(255,${-(radius * 2.55) + 255},0)`
 			ctx.lineWidth = 1
 			ctx.stroke()
 		})
