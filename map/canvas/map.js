@@ -21,8 +21,10 @@
 				ctx.lineTo(getLon(p.lon), getLat(p.lat))
 			})
 
-			ctx.strokeStyle = `rgba(30,30,30)`
+			ctx.fillStyle = `rgb(30,30,30)`
+			ctx.strokeStyle = `rgb(30,30,30)`
 			ctx.lineWidth = 1
+			ctx.fill()
 			ctx.stroke()
 		})
 
