@@ -12,15 +12,15 @@ The top 10 IPs are:
 | IP              | Count |
 | --------------- | -----:|
 | 103.27.239.2 | 11209 |
-| 116.31.116.2 | 11114 |
+| 116.31.116.2 | 11122 |
 | 116.31.116.27 | 10805 |
 | 123.183.209.139 | 10079 |
+| 216.117.56.68 | 9535 |
 | 103.99.0.188 | 5760 |
-| 61.177.172.64 | 5505 |
 | 59.63.166.104 | 5505 |
+| 61.177.172.64 | 5505 |
 | 18.217.140.251 | 5064 |
 | 59.63.188.32 | 4808 |
-| 59.63.188.36 | 4474 |
 
 #### Map
 ![Map of first 1000 IPs](https://github.com/ctrlaltdev/illegal-auth-attempts/raw/master/map/map.png)
@@ -30,17 +30,17 @@ The top 10 IPs are:
 The top 10 users are:
 
 | User    | Count |
-| ------- | -----:|
-| admin | 7294 |
-| test | 6836 |
-| user | 4530 |
-| pi | 3697 |
-| ubuntu | 3094 |
-| oracle | 2945 |
-| guest | 2743 |
-| postgres | 2599 |
-| ftpuser | 2275 |
-| nagios | 1645 |
+| ------- |-----:|
+| test | 10587 |
+| admin | 8576 |
+| user | 7008 |
+| ubuntu | 5348 |
+| pi | 4460 |
+| ftpuser | 4375 |
+| oracle | 4147 |
+| postgres | 3831 |
+| guest | 3343 |
+| nagios | 2495 |
 
 ### Files
 

@@ -1,5 +1,5 @@
 (() => {
-	fetch('/shapes.json')
+	fetch('shapes.json')
 		.then(r => r.json())
 		.then(shapes => { draw(shapes) })
 
