@@ -1,13 +1,25 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/nxadm/tail"
 )
 
 var (
-	file = "/var/log/auth.log"
+	file = "./auth.log"
+	// file = "/var/log/auth.log"
+
+	done = make(chan bool)
+
+	logs = make(chan string, 12)
+
+	pamLogs          = make(chan string, 2)
+	failedPwdLogs    = make(chan string, 2)
+	disconnectLogs   = make(chan string, 2)
+	disconnectedLogs = make(chan string, 2)
+	connClosedLogs   = make(chan string, 2)
+	invalidUserLogs  = make(chan string, 2)
+
+	events = make(chan *Event, 12)
 )
 
 func tailer(c chan<- string) {
@@ -22,16 +34,43 @@ func tailer(c chan<- string) {
 func dispatcher(c <-chan string) {
 	for {
 		msg := <-c
-		fmt.Println(msg)
+		logType := ParseType(msg)
+
+		switch logType {
+		case "pam":
+			pamLogs <- msg
+			break
+		case "failedpwd":
+			failedPwdLogs <- msg
+			break
+		case "disconnect":
+			disconnectLogs <- msg
+			break
+		case "connclosed":
+			connClosedLogs <- msg
+			break
+		case "invaliduser":
+			invalidUserLogs <- msg
+			break
+		default:
+			break
+		}
 	}
 }
 
 func main() {
-	done := make(chan bool)
-	c := make(chan string, 2)
 
-	go tailer(c)
-	go dispatcher(c)
+	go tailer(logs)
+	go dispatcher(logs)
+
+	go PamParser(pamLogs, events)
+	go FailedPwdParser(failedPwdLogs, events)
+	go DisconnectParser(disconnectLogs, events)
+	go DisconnectedParser(disconnectedLogs, events)
+	go ConnClosedParser(connClosedLogs, events)
+	go InvalidUserParser(invalidUserLogs, events)
+
+	go Printer(events)
 
 	<-done
 }
